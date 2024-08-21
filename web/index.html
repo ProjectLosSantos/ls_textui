@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css" integrity="sha512-/k658G6UsCvbkGRB3vPXpsPHgWeduJwiWGPCGS14IQw3xpr63AEMdA8nMYG2gmYkXitQxDTn6iiK/2fD4T87qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .textShadow {
+            text-shadow: 0px 0px 15px rgb(2 132 199);
+        }
+        .boxShadow {
+            box-shadow: 0 0px 10px 2px rgba(2, 132, 199, 0.6)
+        }
+    </style>
+
+</head>
+<body class="h-screen w-screen select-none overflow-hidden">
+    <div id="app" class="h-full w-full flex justify-center items-end">
+        <div class="m-3 p-3 flex flex-col gap-2">
+            <div v-for="ui in textUIs" :key="ui.id" class="flex flex-row gap-2">
+                <div class="bg-[#242424] w-[40px] h-[40px] mr-1 rounded h-1/4 flex items-center justify-center text-base">
+                    <span class="text-sky-600 textShadow font-bold text-lg">{{ui.key}}</span>
+                </div>
+                <div class="bg-[#242424] h-[40px] p-3 rounded text-neutral-200 flex justify-center items-center h-3/4 text-base font-semibold relative">
+                    <span class="px-2">{{ ui.message }}</span>
+                    <span class="absolute top-1 left-1 w-1.5 h-1.5 rounded-full bg-sky-600 boxShadow"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.prod.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
